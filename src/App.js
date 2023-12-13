@@ -1,24 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import Flexi from './components/Flexi';
+import "./App.css"
 
 function App() {
+  const onFlexiSubmit = (formData) => {
+    // Handle the form submission data
+    console.log(formData);
+  };
+
+  const flexiConfig = {
+    items: [
+      {
+        name: "person_name",
+        label: "Person's Name",
+        type: "TextField",
+      },
+      {
+        name: "states",
+        label: "Person's state",
+        type: "DropDown",
+        values: ["Maharashtra", "Kerala", "Tamil Nadu"],
+      },
+      // Add more items as needed
+    ],
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Flexi onSubmit={onFlexiSubmit} config={flexiConfig} />;
+    </>
   );
 }
 
