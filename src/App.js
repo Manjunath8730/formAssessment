@@ -21,7 +21,6 @@ function App() {
         type: "DropDown",
         values: ["Maharashtra", "Kerala", "Tamil Nadu"],
       },
-      // Add more items as needed
     ],
   };
   return (
